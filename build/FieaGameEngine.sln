@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Library", "..\source\Library\Library.vcxproj", "{BA884A04-ACA0-486E-ADD7-1B93CB51E45B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DirectX", "..\source\Platforms\DirectX\DirectX.vcxproj", "{00172B67-6D1E-40F5-9692-658CCE5957FD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BA884A04-ACA0-486E-ADD7-1B93CB51E45B} = {BA884A04-ACA0-486E-ADD7-1B93CB51E45B}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenGL", "..\source\Platforms\OpenGL\OpenGL.vcxproj", "{3ED8389E-06F9-4927-BDA8-8A69B0548E45}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTests_Desktop", "..\source\UnitTests\UnitTests_Desktop\UnitTests_Desktop.vcxproj", "{F142B519-933C-47E2-B023-D67B7C1BE9FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA884A04-ACA0-486E-ADD7-1B93CB51E45B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BA884A04-ACA0-486E-ADD7-1B93CB51E45B}.Debug|Win32.Build.0 = Debug|Win32
+		{BA884A04-ACA0-486E-ADD7-1B93CB51E45B}.Release|Win32.ActiveCfg = Release|Win32
+		{BA884A04-ACA0-486E-ADD7-1B93CB51E45B}.Release|Win32.Build.0 = Release|Win32
+		{00172B67-6D1E-40F5-9692-658CCE5957FD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{00172B67-6D1E-40F5-9692-658CCE5957FD}.Debug|Win32.Build.0 = Debug|Win32
+		{00172B67-6D1E-40F5-9692-658CCE5957FD}.Release|Win32.ActiveCfg = Release|Win32
+		{00172B67-6D1E-40F5-9692-658CCE5957FD}.Release|Win32.Build.0 = Release|Win32
+		{3ED8389E-06F9-4927-BDA8-8A69B0548E45}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3ED8389E-06F9-4927-BDA8-8A69B0548E45}.Debug|Win32.Build.0 = Debug|Win32
+		{3ED8389E-06F9-4927-BDA8-8A69B0548E45}.Release|Win32.ActiveCfg = Release|Win32
+		{3ED8389E-06F9-4927-BDA8-8A69B0548E45}.Release|Win32.Build.0 = Release|Win32
+		{F142B519-933C-47E2-B023-D67B7C1BE9FF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F142B519-933C-47E2-B023-D67B7C1BE9FF}.Debug|Win32.Build.0 = Debug|Win32
+		{F142B519-933C-47E2-B023-D67B7C1BE9FF}.Release|Win32.ActiveCfg = Release|Win32
+		{F142B519-933C-47E2-B023-D67B7C1BE9FF}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

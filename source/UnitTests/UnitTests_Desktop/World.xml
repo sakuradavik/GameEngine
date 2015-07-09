@@ -1,0 +1,11 @@
+<World name="FIEA">
+ <Sector name="ProgrammingII" >
+  <Entity name="Paul" class = "Entity">
+  </Entity>
+ </Sector>
+ <Sector name="ProgrammingI" >
+  <Entity name="Tom" class = "Entity">
+  </Entity>
+ </Sector>
+</World>
+

@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F142B519-933C-47E2-B023-D67B7C1BE9FF}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>UnitTests_Desktop</RootNamespace>
+    <SccProjectName>
+    </SccProjectName>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(ProjectDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)obj\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(ProjectDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)obj\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(CXXTEST_DIR);$(SolutionDir)..\source\Library;$(SolutionDir)..\external\glm;$(SolutionDir)..\external\Expat\include</AdditionalIncludeDirectories>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <DisableSpecificWarnings>4100;4481;</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(SolutionDir)..\external\Expat\lib\Expatd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)..\source\UnitTests\Resources\XML" "$(OutDir)"
+copy "$(SolutionDir)..\source\UnitTests\Resources\XML" "$(ProjectDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(CXXTEST_DIR);$(SolutionDir)..\source\Library;$(SolutionDir)..\external\glm;$(SolutionDir)..\external\Expat\include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <DisableSpecificWarnings>4100;4481;</DisableSpecificWarnings>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>$(SolutionDir)..\external\Expat\lib\Expat.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)..\source\UnitTests\Resources\XML" "$(OutDir)"
+copy "$(SolutionDir)..\source\UnitTests\Resources\XML" "$(ProjectDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="Main.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --runner=ParenPrinter -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --runner=ParenPrinter -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FileName).cpp</Outputs>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ActionTest.cpp" />
+    <ClCompile Include="AsyncMessageFoo.cpp" />
+    <ClCompile Include="AttributedFoo.cpp" />
+    <ClCompile Include="AttributeTest.cpp" />
+    <ClCompile Include="ConcreteAction.cpp" />
+    <ClCompile Include="DatumTest.cpp" />
+    <ClCompile Include="EntiryTest.cpp" />
+    <CustomBuild Include="EventAsyncTest.h">
+      <FileType>CppCode</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FileName).cpp</Outputs>
+    </CustomBuild>
+    <ClCompile Include="EventAsyncTest.cpp" />
+    <ClCompile Include="EventTest.cpp" />
+    <ClCompile Include="FactoryTest.cpp" />
+    <ClCompile Include="Foo.cpp" />
+    <ClCompile Include="FooEventSubscriber.cpp" />
+    <ClCompile Include="FooHashFunctor.cpp" />
+    <ClCompile Include="FooTest.cpp" />
+    <ClCompile Include="HashMapTest.cpp" />
+    <ClCompile Include="IntegerParseHelper.cpp" />
+    <ClCompile Include="IntegerSharedData.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MessageFoo.cpp" />
+    <ClCompile Include="ReactionTest.cpp" />
+    <ClCompile Include="ScopeParseTest.cpp" />
+    <ClCompile Include="ScopeTest.cpp" />
+    <ClCompile Include="SListTest.cpp" />
+    <ClCompile Include="StackTest.cpp" />
+    <ClCompile Include="VectorParseHelper.cpp" />
+    <ClCompile Include="VectorSharedData.cpp" />
+    <ClCompile Include="VectorTest.cpp" />
+    <ClCompile Include="XmlParserTest.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="FooTest.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating unit tests</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).cpp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating unit tests</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FileName).cpp</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Library\Library.vcxproj">
+      <Project>{ba884a04-aca0-486e-add7-1b93cb51e45b}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="SListTest.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FileName).cpp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating SList Unit Tests</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating SList Unit Tests</Message>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="FactoryTest.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FileName).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="EntiryTest.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FileName).cpp</Outputs>
+    </CustomBuild>
+    <ClInclude Include="AsyncMessageFoo.h" />
+    <ClInclude Include="ConcreteAction.h" />
+    <CustomBuild Include="EventTest.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FileName).cpp</Outputs>
+    </CustomBuild>
+    <ClInclude Include="FooEventSubscriber.h" />
+    <ClInclude Include="IntegerParseHelper.h" />
+    <ClInclude Include="IntegerSharedData.h" />
+    <CustomBuild Include="ScopeParseTest.h">
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FileName).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+    </CustomBuild>
+    <CustomBuild Include="ActionTest.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FileName).cpp</Outputs>
+    </CustomBuild>
+    <ClInclude Include="MessageFoo.h" />
+    <CustomBuild Include="ReactionTest.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FileName).cpp</Outputs>
+    </CustomBuild>
+    <ClInclude Include="VectorParseHelper.h" />
+    <ClInclude Include="VectorSharedData.h" />
+    <CustomBuild Include="XmlParserTest.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FileName).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="ScopeTest.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating Unit Tests</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating Unit Tests</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FileName).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="DatumTest.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating Unit Tests</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).cpp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating Unit Tests</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FileName).cpp</Outputs>
+    </CustomBuild>
+    <ClInclude Include="AttributedFoo.h" />
+    <CustomBuild Include="AttributeTest.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating Unit Tests</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating Unit Tests</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FileName).cpp</Outputs>
+    </CustomBuild>
+    <ClInclude Include="Foo.h" />
+    <ClInclude Include="FooHashFunctor.h" />
+    <CustomBuild Include="HashMapTest.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FileName).cpp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating unit tests</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating unit tests</Message>
+    </CustomBuild>
+    <CustomBuild Include="StackTest.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FileName).cpp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating Stack Unit Tests</Message>
+    </CustomBuild>
+    <CustomBuild Include="VectorTest.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(PYTHON_DIR)python" "$(CXXTEST_DIR)bin\cxxtestgen" --part -o "%(Filename).cpp" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FileName).cpp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating SList Unit Tests</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating SList Unit Tests</Message>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,5 @@
+SCC = This is a source code control file
+
+[Library.vcxproj]
+SCC_Aux_Path = "P4SCC#fiea-artists:1666##lcuella##lcuella"
+SCC_Project_Name = Perforce Project

@@ -1,0 +1,6 @@
+<Scope>
+	<Integer name = "PowerLevel">  
+		<value> 7 </value>
+		<value index = "1"> 9 </value>
+	</Integer>
+</Scope>

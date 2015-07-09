@@ -1,0 +1,9 @@
+<World name="FIEA">
+ <Sector name="ProgrammingII" >
+	<Entity name="Paul" class = "Entity">
+	<ActionDestroyAction name = "DeleteAssignments" instanceName = "ActionAssignment">
+	</ActionDestroyAction>
+  </Entity>
+ </Sector>
+</World>
+

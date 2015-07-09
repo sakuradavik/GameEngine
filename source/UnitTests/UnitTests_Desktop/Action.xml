@@ -1,0 +1,9 @@
+<World name="FIEA">
+ <Sector name="ProgrammingII" >
+  <Entity name="Paul" class = "Entity">
+	<ActionCreateAction name = "Assignments" instanceName = "ActionAssignment" class = "ConcreteAction" >
+	</ActionCreateAction>
+  </Entity>
+ </Sector>
+</World>
+

@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Container">
+      <UniqueIdentifier>{d806c0bb-75b3-4b2b-981a-61daa35bf0fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Parsers">
+      <UniqueIdentifier>{a4f3462c-c1d2-4b45-be78-34e48c2b88b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Parsers">
+      <UniqueIdentifier>{baeb3647-dad1-4e05-a683-8c29d04bda58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Parsers\World">
+      <UniqueIdentifier>{7ba8b432-fbac-49a8-81a5-717586f515b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Parsers\Scope">
+      <UniqueIdentifier>{490e60ab-ba89-4d94-a466-727b624a7793}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Parsers\World">
+      <UniqueIdentifier>{9ec55be7-a348-4f87-9e1f-ca977d6b335e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Parsers\Scope">
+      <UniqueIdentifier>{d3ecf008-3668-4d8e-947c-39866aa31799}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameException.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SList.h">
+      <Filter>Header Files\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Header Files\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="Stack.h">
+      <Filter>Header Files\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="HashMap.h">
+      <Filter>Header Files\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="Datum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RTTI.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scope.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Attribute.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Factory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameClock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameTime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="XmlParseMaster.h">
+      <Filter>Header Files\Parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="IXmlParseHelper.h">
+      <Filter>Header Files\Parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="SectorParseHelper.h">
+      <Filter>Header Files\Parsers\World</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldParseHelper.h">
+      <Filter>Header Files\Parsers\World</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldSharedData.h">
+      <Filter>Header Files\Parsers\World</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityParseHelper.h">
+      <Filter>Header Files\Parsers\World</Filter>
+    </ClInclude>
+    <ClInclude Include="FloatXmlParseHelper.h">
+      <Filter>Header Files\Parsers\Scope</Filter>
+    </ClInclude>
+    <ClInclude Include="IntegerXmlParseHelper.h">
+      <Filter>Header Files\Parsers\Scope</Filter>
+    </ClInclude>
+    <ClInclude Include="MatrixXmlParseHelper.h">
+      <Filter>Header Files\Parsers\Scope</Filter>
+    </ClInclude>
+    <ClInclude Include="ScopeSharedData.h">
+      <Filter>Header Files\Parsers\Scope</Filter>
+    </ClInclude>
+    <ClInclude Include="ScopeXmlParseHelper.h">
+      <Filter>Header Files\Parsers\Scope</Filter>
+    </ClInclude>
+    <ClInclude Include="StringXmlParseHelper.h">
+      <Filter>Header Files\Parsers\Scope</Filter>
+    </ClInclude>
+    <ClInclude Include="VectorXmlParseHelper.h">
+      <Filter>Header Files\Parsers\Scope</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Action.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionCreateAction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionXmlParseHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionDestroyAction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Event.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EventPublisher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EventQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EventSubscriber.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Reaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EventMessageAttributed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ReactionAttributed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionEvent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameException.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Datum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scope.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Attribute.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameClock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameTime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="XmlParseMaster.cpp">
+      <Filter>Source Files\Parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityParseHelper.cpp">
+      <Filter>Source Files\Parsers\World</Filter>
+    </ClCompile>
+    <ClCompile Include="SectorParseHelper.cpp">
+      <Filter>Source Files\Parsers\World</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldSharedData.cpp">
+      <Filter>Source Files\Parsers\World</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldParseHelper.cpp">
+      <Filter>Source Files\Parsers\World</Filter>
+    </ClCompile>
+    <ClCompile Include="IXmlParseHelper.cpp">
+      <Filter>Source Files\Parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="VectorXmlParseHelper.cpp">
+      <Filter>Source Files\Parsers\Scope</Filter>
+    </ClCompile>
+    <ClCompile Include="StringXmlParseHelper.cpp">
+      <Filter>Source Files\Parsers\Scope</Filter>
+    </ClCompile>
+    <ClCompile Include="ScopeXmlParseHelper.cpp">
+      <Filter>Source Files\Parsers\Scope</Filter>
+    </ClCompile>
+    <ClCompile Include="ScopeSharedData.cpp">
+      <Filter>Source Files\Parsers\Scope</Filter>
+    </ClCompile>
+    <ClCompile Include="IntegerXmlParseHelper.cpp">
+      <Filter>Source Files\Parsers\Scope</Filter>
+    </ClCompile>
+    <ClCompile Include="FloatXmlParseHelper.cpp">
+      <Filter>Source Files\Parsers\Scope</Filter>
+    </ClCompile>
+    <ClCompile Include="MatrixXmlParseHelper.cpp">
+      <Filter>Source Files\Parsers\Scope</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Action.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionCreateAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionXmlParseHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionDestroyAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Reaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EventMessageAttributed.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ReactionAttributed.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionEvent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EventQueue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EventPublisher.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SList.inl">
+      <Filter>Header Files\Container</Filter>
+    </None>
+    <None Include="Vector.inl">
+      <Filter>Header Files\Container</Filter>
+    </None>
+    <None Include="Stack.inl">
+      <Filter>Header Files\Container</Filter>
+    </None>
+    <None Include="HashMap.inl">
+      <Filter>Header Files\Container</Filter>
+    </None>
+    <None Include="Factory.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="Event.inl">
+      <Filter>Header Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>
